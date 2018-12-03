@@ -105,11 +105,90 @@ void zad24()
 		
 	}
 }
+//2.5. Zapoznaæ siê z instrukcjami continue; i break;. Pierwsza s³u¿y do zakoñczenia iteracji i przejœcia do nastêpnej, a druga natychmiast
+//koñczy pêtlê. Przerobiæ program z zadania 1.4, aby wyœwietla³ tylko parzyste liczby (u¿yæ if oraz continue). Jeœli liczba wynosi 40, nale¿y
+//wyjœæ z pêtli i zakoñczyæ program
+void zad25()
+{
+	int a;
+	while(1)
+	{
+	cout<<"Podaj liczbe:";
+	cin>>a;
+	if (a==40) 
+	{
+		break;
+	} else if (a%2==0)
+	{
+			cout<<"Wyswietlam liczbe parzysta:"<<a<<endl;
+	} else
+	{
+		continue;
+	}
+}
+//nie wiem czy dobrze zrozumialem to zadanie ale chyba o to chodzilo. 
+}
 
+//2.6. Zapoznaæ siê z pêtl¹ for. Pêtla s³u¿y do wykonania danego fragmentu kodu ZNAN¥ Z GÓRY okreœlon¹ iloœæ razy. Uwaga - ka¿d¹ pêtlê
+//for mo¿na zast¹piæ pêtl¹ while i wzajemnie. Zwyczajowo obowiazuje zasada, ¿e jeœli iloœæ iteracji jest znana - u¿ywamy for, a jeœli nie jest
+//znana (zale¿y od u¿ytkownika lub jakiegoœ stanu zewnêtrznego) - u¿ywamy pêtli while. Pêtla for sk³ada siê z: ZMIENNEJ ITERACYJNEJ,
+//czyli stanu pocz¹tkowego pêtli, np. int i = 0. Nastêpnie WARUNKU ZAKOÑCZENIA PÊTLI, np. i<10. Nastêpnie OPERACJI WYKONYWANEJ
+//PO KA¯DEJ ITERACJI - zazwyczaj jest to zwiêkszenie iteratora o 1, czyli i = i + 1, b¹dŸ w skrócie i++. Napisaæ pêtlê for, która wyœwietli cyfry
+//od 0 do 9.
+
+void zad26()
+{
+	int i;
+	for(i=0;i<=9;i++)
+	{cout<<i<<endl;
+	}
+}
+//2.7. Pobraæ od u¿ytkownika liczby x i y. Zak³adamy, ¿e y > x (zawsze, nie musimy tego sprawdzaæ). Za pomoc¹ pêtli for wypisaæ liczby
+//miêdzy x a y (do przemyœlenia - co jest stanem pocz¹tkowym, a co warunkiem zakoñczenia pêtli?)
+void zad27()
+{
+	int x,y,roznica,i;
+	cout<<"Podaj x: ";
+	cin>>x;
+	cout<<"\nPodaj y wieksze od x: ";
+	cin>>y;
+	roznica=y-x;
+	for(i=1;i<roznica;i++)
+	{
+	cout<<y-i<<endl;
+}
+}
+
+//2.8. Pobraæ od u¿ytkownika liczbê x. Za pomoc¹ pêtli for wypisaæ wszystkie liczby mniejsze od x, ale wiêksze ni¿ 0.
+void zad28()
+{
+	unsigned int x;
+	int i;
+	cout<<"Podaj x>0: ";
+	cin>>x;
+	
+	for(x=x-1;x>0;x--)
+	{
+		cout<<x<<endl;
+	}
+}
+
+//2.9. Pobraæ od u¿ytkownika liczbê x. Za pomoc¹ pêtli for wypisywaæ CO TRZECI¥ liczbê wiêksz¹ od x. Pêtla powinna siê zakoñczyæ, jeœli
+//liczba przekroczy 100. Uwaga - proszê nie u¿ywaæ operacji continue i break, a sterowaæ tylko parametrami pêtli.
+void zad29()
+{
+	int x;
+	cout<<"Podaj : ";
+	cin>>x;
+	for(x=x+3;x<=100;x+=3)
+	{
+		cout<<x<<",  ";
+	}
+}
 
 int main()
 {
 	
-	zad24();
+	zad29();
 	return 0;
 }
