@@ -18,7 +18,7 @@ Student * Create(int age, int height, int semestr)
 	student->Height=height;
 	student->Semestr=semestr;
 	
-	
+
 }
 
 void PrintStudent(Student *s)
@@ -49,9 +49,30 @@ int main()
 	PrintStudent(&Stu2);
 	cout<<"Czy s¹ tacy sami?: ";
 	if (AreEqueal(&Stu1,&Stu2)==true) {
-		cout<<"TAk";
-	}else cout<<"Nie";
+		cout<<"TAk"<<endl;
+	}else cout<<"Nie"<<endl;
+
 	
+	
+	// zad 1.2 Utworzyc tablice 3 studentow. Zape³niæ j¹ wartoœciami, wyœwietliæ, zwolniæ pamiêæ. Tablica za pomoc¹ metody malloc.
+	cout<<"\n\nZadanie 1.2"<<endl;
+	int n=3,i;
+	Student * studenta=(Student*) malloc(sizeof (Student) * n);
+	
+	for(i=0;i<n;i++)
+	{
+		studenta[i].Age=20+i*2;
+		studenta[i].Height=150+i*10;
+		studenta[i].Semestr=2+i;
+	}
+	for(i=0;i<n;i++)
+	{
+		cout<<"\nStudent "<<i<<" :\n";
+		PrintStudent(&studenta[i]);
+	}
+	
+	
+	free(studenta);
 	
 	return 0;
 }
